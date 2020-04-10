@@ -8,8 +8,6 @@ import PropTypes from "prop-types";
 import Image from "react-bootstrap/Image";
 
 class NewsCard extends Component {
-  
-  // TODO: finish implementing NewsCard
   render() {
     return (
       <Card className='news-card'>

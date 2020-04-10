@@ -37,7 +37,7 @@ class NewsCardBadge extends Component {
                color: this.badge_txtColor_mapping[this.props.section]
              }}
              className='news-section-badge'>
-        {this.props.section}
+        {this.props.section.toUpperCase()}
       </Badge>
     );
   }
