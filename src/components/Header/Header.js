@@ -30,7 +30,7 @@ class Header extends Component {
           </Router>
           <FaRegBookmark className="bookmark-icon"/>
           <Navbar.Text id="source-text-nytimes">NYTimes</Navbar.Text>
-          <ToggleSwitch checked={this.props.toggle} handleToggle={this.props.handleToggle}/>
+          <ToggleSwitch toggle={this.props.toggle} handleToggle={this.props.handleToggle}/>
           <Navbar.Text id="source-text-guardian">Guardian</Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

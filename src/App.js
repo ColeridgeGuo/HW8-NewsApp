@@ -14,6 +14,7 @@ class App extends Component {
   handleToggle = () => {
     this.setState({"toggle": !this.state.toggle});
     localStorage.setItem("toggle", this.state.toggle); // remember toggle
+    // toggling behavior is handled in News.js: componentDidUpdate
   };
   
   render() {

@@ -4,21 +4,18 @@ import PropTypes from "prop-types";
 
 function ToggleSwitch(props) {
   return (
-    // TODO: make width+height responsive
-    <Switch checked={props.checked}
+    <Switch checked={props.toggle}
             onChange={props.handleToggle}
             uncheckedIcon={false}
             checkedIcon={false}
             onColor="#2480F0"
             offColor="#D5D5D5"
-            height={27}
-            width={50}
             className="toggle-source"/>
   );
 }
 
 ToggleSwitch.propTypes = {
-  checked: PropTypes.bool.isRequired,
+  toggle: PropTypes.bool.isRequired,
   handleToggle: PropTypes.func.isRequired
 };
 
