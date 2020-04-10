@@ -3,12 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import Select from 'react-select';
-import ToggleSwitch from './Nav_components/ToggleSwitch';
+import ToggleSwitch from './Header_components/ToggleSwitch';
 import {FaRegBookmark} from 'react-icons/fa';
 
-import './Navigation.css';
+import './Header.css';
 
-class Navigation extends Component {
+class Header extends Component {
   
   render() {
     return (
@@ -38,4 +38,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default Header;

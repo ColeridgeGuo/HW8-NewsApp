@@ -4,7 +4,7 @@ import NewsCard from "./NewsCard";
 
 import './News.css';
 
-class NewsArticles extends Component {
+class News extends Component {
   constructor(props) {
     super(props);
     this.state = {articles: []};
@@ -34,4 +34,4 @@ class NewsArticles extends Component {
   }
 }
 
-export default NewsArticles;
+export default News;

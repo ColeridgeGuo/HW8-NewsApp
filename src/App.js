@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Navigation from "./components/Navigation/Navigation";
-import NewsArticles from "./components/News/NewsArticles";
+import Header from "./components/Header/Header";
+import News from "./components/News/News";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,11 +19,11 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navigation
+        <Header
           toggle={this.state.toggle}
           handleToggle={this.handleToggle}
         />
-        <NewsArticles
+        <News
           toggle={this.state.toggle}
         />
       </>
