@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import Axios from "axios";
 import NewsCard from "./NewsCard";
 
+import './News.css';
+
 class NewsArticles extends Component {
   constructor(props) {
     super(props);

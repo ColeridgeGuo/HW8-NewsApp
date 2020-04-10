@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Navigation from "./components/Navigation/Navigation";
 import NewsArticles from "./components/News/NewsArticles";
 
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {

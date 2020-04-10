@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import Badge from "react-bootstrap/Badge";
 import PropTypes from "prop-types";
 
+import './NewsCardBadge.css';
+
 class NewsCardBadge extends Component {
   constructor(props) {
     super(props);

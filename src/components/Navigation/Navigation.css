@@ -1,0 +1,30 @@
+.navbar {
+  background-image: linear-gradient(to right, #0f1a35, #2849ac);
+}
+
+.bookmark-icon {
+  color: white;
+}
+
+#source-text-nytimes {
+  color: white;
+  margin: 0 1% 0 1%;
+}
+
+#source-text-guardian {
+  color: white;
+  margin: 0 1% 0 1%;
+}
+
+/* Control responsive behavior for React-Select */
+@media (min-width: 992px) {
+  .autosuggest {
+    min-width: 20%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .autosuggest {
+    min-width: 75%;
+  }
+}
