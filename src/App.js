@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {"toggle": localStorage.getItem("toggle") === "true"};
+    this.state = {
+      toggle: localStorage.getItem("toggle") === "true"
+    };
   }
   
   // handle source toggling between NYTimes (false) and Guardian (true)

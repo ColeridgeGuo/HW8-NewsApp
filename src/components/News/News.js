@@ -45,7 +45,7 @@ class News extends Component {
     return this.state.articles.map(
       (article) => (
         <NewsCard key={article.id}
-                  articles={article}/>
+                  article={article}/>
       )
     );
   }

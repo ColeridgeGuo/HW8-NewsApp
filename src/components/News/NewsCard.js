@@ -1,36 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewsCardBadge from './NewsCard_components/NewsCardBadge';
+import {IoMdShare} from 'react-icons/io';
+import ShareModal from "./NewsCard_components/ShareModal";
 import PropTypes from "prop-types";
-import Image from "react-bootstrap/Image";
 
 function NewsCard(props) {
+  const [modalShow, setModalShow] = useState(false);
+  const handleModalClose = () => setModalShow(false);
+  const handleModalShow = () => setModalShow(true);
+  // TODO: add border around images
+  // TODO: make card clickable to detail page
   return (
     <Card className='news-card'>
       <Container fluid>
         <Row>
-          <Col sm={6} md={5} lg={4} xl={3}>
-            <Image src={props.articles.image} className='news-image home' fluid/>
+          <Col lg={3}>
+            <Card.Img src={props.article.image} className='news-image home'/>
           </Col>
-          <Col sm={6} md={7} lg={8} xl={9}>
+          <Col lg={9}>
             <Card.Body className='news-body home'>
-              <Card.Title className='news-title home'>{props.articles.title}</Card.Title>
-              <Card.Text className='news-descp home'>{props.articles.descp}</Card.Text>
-              <Card.Text as='span' className='news-date'>{props.articles.date}</Card.Text>
-              <NewsCardBadge section={props.articles.sectionId}/>
+              <Card.Title className='news-title home'>
+                {props.article.title}
+                <IoMdShare onClick={handleModalShow}/>
+              </Card.Title>
+              <Card.Text className='news-descp home'>
+                {props.article.descp}
+              </Card.Text>
+              <Card.Text as='span' className='news-date'>
+                {props.article.date}
+              </Card.Text>
+              <NewsCardBadge section={props.article.sectionId}/>
             </Card.Body>
           </Col>
         </Row>
       </Container>
+      <ShareModal show={modalShow}
+                  handleClose={handleModalClose}
+                  data={props.article}/>
     </Card>
   );
 }
 
 NewsCard.propTypes = {
-  articles: PropTypes.object.isRequired
+  article: PropTypes.object.isRequired
 }
 
 export default NewsCard;

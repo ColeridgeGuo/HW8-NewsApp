@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import Badge from "react-bootstrap/Badge";
 import PropTypes from "prop-types";
 
-import './NewsCardBadge.css';
-
 class NewsCardBadge extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +32,8 @@ class NewsCardBadge extends Component {
       <Badge as='span'
              style={{
                backgroundColor: this.badge_bgColor_mapping[this.props.section],
-               color: this.badge_txtColor_mapping[this.props.section]
+               color: this.badge_txtColor_mapping[this.props.section],
+               float: 'right'
              }}
              className='news-section-badge'>
         {this.props.section.toUpperCase()}

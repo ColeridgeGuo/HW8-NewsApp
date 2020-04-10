@@ -22,3 +22,7 @@
   font-style: italic;
   float: left;
 }
+
+.share-modal-body {
+  text-align: center;
+}
