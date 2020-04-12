@@ -11,33 +11,28 @@ class News extends Component {
     this.state = {articles: []};
   }
   
-  componentDidMount() {
+  // call backend to retrieve news articles
+  retrieve_articles = () => {
     if (this.props.toggle) {
-      Axios.get('/guardian')
+      Axios.get(`/guardian/${this.props.section}`)
         .then(res => {
           this.setState({articles: res.data.articles});
         });
     } else {
-      Axios.get('/nytimes')
+      Axios.get(`/nytimes/${this.props.section}`)
         .then(res => {
           this.setState({articles: res.data.articles});
         })
     }
   }
   
+  componentDidMount() {
+    this.retrieve_articles();
+  }
+  
   componentDidUpdate(prevProps) {
     if (this.props.toggle !== prevProps.toggle) {
-      if (this.props.toggle) {
-        Axios.get('/guardian')
-          .then(res => {
-            this.setState({articles: res.data.articles})
-          });
-      } else {
-        Axios.get('/nytimes')
-          .then(res => {
-            this.setState({articles: res.data.articles})
-          })
-      }
+      this.retrieve_articles();
     }
   }
   
@@ -52,7 +47,8 @@ class News extends Component {
 }
 
 News.propTypes = {
-  toggle: PropTypes.bool.isRequired
+  toggle: PropTypes.bool.isRequired,
+  section: PropTypes.string.isRequired
 }
 
 export default News;

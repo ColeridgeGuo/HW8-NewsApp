@@ -18,7 +18,7 @@ function ShareModal(props) {
     <Modal show={props.show} onHide={props.handleClose} size='md'>
       <Modal.Header closeButton>
         <Modal.Title>
-          {props.data.title} | {props.data.author}
+          {props.data.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='share-modal-body'>

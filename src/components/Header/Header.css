@@ -1,19 +1,23 @@
 .navbar {
-  background-image: linear-gradient(to right, #0f1a35, #2849ac);
+  background-image: linear-gradient(to right, #101c3a, #3556af);
 }
 
 .bookmark-icon {
   color: white;
 }
 
-#source-text-nytimes {
-  color: white;
-  margin: 0 1% 0 1%;
+.nav-link {
+  font-size: 11pt;
 }
 
-#source-text-guardian {
+.nav-tab-act {
   color: white;
-  margin: 0 1% 0 1%;
+}
+
+.source-text {
+  font-size: 13pt;
+  color: white !important;
+  margin: 0 1rem 0 1rem;
 }
 
 /* Control responsive behavior for React-Select */
@@ -26,5 +30,9 @@
 @media (max-width: 991.98px) {
   .autosuggest {
     min-width: 75%;
+  }
+
+  .source-text {
+    margin: .2rem 0 .2rem .1rem;
   }
 }

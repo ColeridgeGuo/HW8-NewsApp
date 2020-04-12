@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Select from 'react-select';
 import ToggleSwitch from './Header_components/ToggleSwitch';
 import {FaRegBookmark} from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 import './Header.css';
 
@@ -18,24 +19,29 @@ class Header extends Component {
           placeholder="Enter Keyword .."/>
         <Navbar.Toggle/>
         <Navbar.Collapse>
-          <Router>
-            <Nav className="mr-auto">
-              <Nav.Link as={Link} to="#">Home</Nav.Link>
-              <Nav.Link as={Link} to="#world">World</Nav.Link>
-              <Nav.Link as={Link} to="#politics">Politics</Nav.Link>
-              <Nav.Link as={Link} to="#business">Business</Nav.Link>
-              <Nav.Link as={Link} to="#tech">Technology</Nav.Link>
-              <Nav.Link as={Link} to="#sports">Sports</Nav.Link>
-            </Nav>
-          </Router>
-          <FaRegBookmark className="bookmark-icon"/>
-          <Navbar.Text id="source-text-nytimes">NYTimes</Navbar.Text>
-          <ToggleSwitch toggle={this.props.toggle} handleToggle={this.props.handleToggle}/>
-          <Navbar.Text id="source-text-guardian">Guardian</Navbar.Text>
+          <Nav className="mr-auto">
+            <Nav.Link as={NavLink} exact to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} exact to="/world">World</Nav.Link>
+            <Nav.Link as={NavLink} exact to="/politics">Politics</Nav.Link>
+            <Nav.Link as={NavLink} exact to="/business">Business</Nav.Link>
+            <Nav.Link as={NavLink} exact to="/technology">Technology</Nav.Link>
+            <Nav.Link as={NavLink} exact to="/sports">Sports</Nav.Link>
+          </Nav>
+          <FaRegBookmark className="bookmark-icon"/><br/>
+          <Navbar.Text className="source-text">NYTimes</Navbar.Text><br/>
+          <ToggleSwitch
+            toggle={this.props.toggle}
+            handleToggle={this.props.handleToggle}/><br/>
+          <Navbar.Text className="source-text">Guardian</Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
     );
   }
+}
+
+Header.propTypes = {
+  toggle: PropTypes.bool.isRequired,
+  handleToggle: PropTypes.func.isRequired
 }
 
 export default Header;
