@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom';
 import Select from 'react-select';
 import ToggleSwitch from './Header_components/ToggleSwitch';
 import {FaRegBookmark} from 'react-icons/fa';
+import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 
 import './Header.css';
@@ -21,13 +22,16 @@ class Header extends Component {
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Nav.Link as={NavLink} exact to="/">Home</Nav.Link>
-            <Nav.Link as={NavLink} exact to="/world">World</Nav.Link>
-            <Nav.Link as={NavLink} exact to="/politics">Politics</Nav.Link>
-            <Nav.Link as={NavLink} exact to="/business">Business</Nav.Link>
-            <Nav.Link as={NavLink} exact to="/technology">Technology</Nav.Link>
-            <Nav.Link as={NavLink} exact to="/sports">Sports</Nav.Link>
+            <Nav.Link as={NavLink} to="/world">World</Nav.Link>
+            <Nav.Link as={NavLink} to="/politics">Politics</Nav.Link>
+            <Nav.Link as={NavLink} to="/business">Business</Nav.Link>
+            <Nav.Link as={NavLink} to="/technology">Technology</Nav.Link>
+            <Nav.Link as={NavLink} to="/sports">Sports</Nav.Link>
           </Nav>
-          <FaRegBookmark className="bookmark-icon"/><br/>
+          <FaRegBookmark className="bookmark-icon" data-tip data-for='bookmark-tip'/>
+          <ReactTooltip place='bottom' effect='solid' id='bookmark-tip'>
+            Bookmark
+          </ReactTooltip><br/>
           <Navbar.Text className="source-text">NYTimes</Navbar.Text><br/>
           <ToggleSwitch
             toggle={this.props.toggle}
