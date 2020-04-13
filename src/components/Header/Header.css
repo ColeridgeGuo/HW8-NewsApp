@@ -1,32 +1,26 @@
 .navbar {
   background-image: linear-gradient(to right, #101c3a, #3556af);
 }
-
 .bookmark-icon {
   color: white;
 }
-
 .nav-link {
   font-size: 11pt;
 }
-
 .nav-tab-act {
   color: white;
 }
-
 .source-text {
   font-size: 13pt;
   color: white !important;
   margin: 0 1rem 0 1rem;
 }
-
 /* Control responsive behavior for React-Select */
 @media (min-width: 992px) {
   .autosuggest {
     min-width: 20%;
   }
 }
-
 @media (max-width: 991.98px) {
   .autosuggest {
     min-width: 75%;
