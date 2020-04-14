@@ -2,12 +2,19 @@
   margin: 1rem 1rem 2rem 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.news-image {
-  margin: 1rem;
+
+.news-card:hover {
+  cursor: pointer;
 }
+
+.news-image {
+  padding: 1rem .2rem;
+}
+
 .news-body {
   margin-bottom: 1rem;
 }
+
 .news-descp.home {
   overflow: hidden;
   display: -webkit-box;

@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Header from "./components/Header/Header";
 import News from "./components/News/News";
+import DetailNews from "./components/News/DetailNews";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,13 +21,13 @@ class App extends Component {
     // toggling behavior is handled in News.js: componentDidUpdate
   };
   
+  // TODO: use param url to reduce the # of Routes
   render() {
     return (
       <Router>
         <Header
           toggle={this.state.toggle}
-          handleToggle={this.handleToggle}
-        />
+          handleToggle={this.handleToggle}/>
         <Route exact path='/'>
           <News toggle={this.state.toggle} section=''/>
         </Route>
@@ -45,6 +46,8 @@ class App extends Component {
         <Route exact path='/sports'>
           <News toggle={this.state.toggle} section='sports'/>
         </Route>
+  
+        <Route exact path='/:src/article/:articleId' component={DetailNews}/>
       </Router>
     );
   }

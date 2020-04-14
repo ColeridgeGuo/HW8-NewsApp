@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 import Axios from "axios";
 import NewsCard from "./NewsCard";
 import PropTypes from 'prop-types';
 
 import './News.css';
 
-class News extends Component {
+class News extends React.Component {
   constructor(props) {
     super(props);
     this.state = {articles: []};

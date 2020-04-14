@@ -7,15 +7,29 @@ import NewsCardBadge from './NewsCard_components/NewsCardBadge';
 import {IoMdShare} from 'react-icons/io';
 import ShareModal from "./NewsCard_components/ShareModal";
 import PropTypes from "prop-types";
+import {useHistory} from "react-router-dom";
 
 function NewsCard(props) {
+  // handle showing sharing modals
   const [modalShow, setModalShow] = useState(false);
   const handleModalClose = () => setModalShow(false);
-  const handleModalShow = () => setModalShow(true);
+  const handleModalShow = (event) => {
+    setModalShow(true);
+    event.stopPropagation();
+    // TODO: stop click propagation
+  }
+  
+  let history = useHistory();
+  const handleClick = () => {
+    if (props.article.src === 'nytimes')
+      history.push(`/nytimes/article/${encodeURIComponent(props.article.url)}`);
+    else if (props.article.src === 'guardian')
+      history.push(`/guardian/article/${encodeURIComponent(props.article.id)}`);
+  };
+  
   // TODO: add border around images
-  // TODO: make card clickable to detail page
   return (
-    <Card className='news-card'>
+    <Card className='news-card home' onClick={handleClick}>
       <Container fluid>
         <Row>
           <Col lg={3}>

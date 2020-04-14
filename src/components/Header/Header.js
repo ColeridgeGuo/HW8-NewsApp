@@ -28,8 +28,8 @@ class Header extends Component {
             <Nav.Link as={NavLink} to="/technology">Technology</Nav.Link>
             <Nav.Link as={NavLink} to="/sports">Sports</Nav.Link>
           </Nav>
-          <FaRegBookmark className="bookmark-icon" data-tip data-for='bookmark-tip'/>
-          <ReactTooltip place='bottom' effect='solid' id='bookmark-tip'>
+          <FaRegBookmark className="bookmark-icon" data-tip data-for='bookmark-tip-header'/>
+          <ReactTooltip place='bottom' effect='solid' id='bookmark-tip-header'>
             Bookmark
           </ReactTooltip><br/>
           <Navbar.Text className="source-text">NYTimes</Navbar.Text><br/>
