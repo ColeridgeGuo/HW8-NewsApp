@@ -19,6 +19,8 @@ function DetailNewsCard(props) {
   const toggleExpand = () => {
     setExpand(!expand);
   }
+  // determine if the description is long enough to expand/collapse
+  const longDescp = () => props.data.descp.length > 1000
   
   return (
     <Card className='news-card detail'>
@@ -64,7 +66,12 @@ function DetailNewsCard(props) {
       </Card.Title>
       <Card.Img src={props.data.image} className='news-image detail'/>
       <Card.Body className='news-body detail'>
-        {expand &&
+        {!longDescp() &&
+        <Card.Text className='news-descp detail'>
+          {props.data.descp}
+        </Card.Text>
+        }
+        {expand && longDescp() &&
         <>
           <Card.Text className='news-descp detail expand'>
             {props.data.descp}
@@ -72,7 +79,7 @@ function DetailNewsCard(props) {
           <IoIosArrowUp className='descp-arrow' onClick={toggleExpand}/>
         </>
         }
-        {!expand &&
+        {!expand && longDescp() &&
         <>
           <Card.Text className='news-descp detail collapse'>
             {props.data.descp}
