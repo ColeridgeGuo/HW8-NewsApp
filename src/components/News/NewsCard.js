@@ -16,7 +16,6 @@ function NewsCard(props) {
   const handleModalShow = (event) => {
     setModalShow(true);
     event.stopPropagation();
-    // TODO: stop click propagation
   }
   
   let history = useHistory();
@@ -29,8 +28,8 @@ function NewsCard(props) {
   
   // TODO: add border around images
   return (
-    <Card className='news-card home' onClick={handleClick}>
-      <Container fluid>
+    <Card className='news-card home'>
+      <Container fluid className='news-card-container home' onClick={handleClick}>
         <Row>
           <Col lg={3}>
             <Card.Img src={props.article.image} className='news-image home'/>

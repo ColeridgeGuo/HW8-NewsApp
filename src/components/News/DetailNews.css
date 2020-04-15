@@ -1,18 +1,15 @@
 .news-image.detail {
   padding: 1rem 1rem 0 1rem;
 }
-
 .news-header.detail {
   padding: 1rem 1rem 0 1rem;
   margin-bottom: 0;
 }
-
 .news-title.detail {
   font-style: italic;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .news-date.detail {
   font-size: 1rem;
   margin-left: 1rem;
@@ -26,4 +23,24 @@
   color: #d70a2f;
   float: right;
   margin-right: 1rem;
+}
+
+.news-descp.detail {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.descp-arrow {
+  float: right;
+  font-size: 1.5rem;
+}
+
+.descp-arrow:hover {
+  cursor: pointer;
+}
+
+.loader {
+  margin: 20% auto;
 }

@@ -3,7 +3,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.news-card:hover {
+.news-card-container.home:hover {
   cursor: pointer;
 }
 
@@ -11,7 +11,7 @@
   padding: 1rem .2rem;
 }
 
-.news-body {
+.news-body.home {
   margin-bottom: 1rem;
 }
 

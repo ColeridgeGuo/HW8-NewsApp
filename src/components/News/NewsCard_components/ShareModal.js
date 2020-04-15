@@ -42,8 +42,7 @@ function ShareModal(props) {
             <Col>
               <EmailShareButton
                 subject='#CSCI_571_NewsApp'
-                url={props.data.url}
-                body={props.data.url}>
+                url={props.data.url}>
                 <EmailIcon round/>
               </EmailShareButton>
             </Col>

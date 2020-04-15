@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Card from 'react-bootstrap/Card';
 import {
   EmailIcon,
@@ -9,11 +9,17 @@ import {
   TwitterShareButton
 } from "react-share";
 import {FaRegBookmark} from 'react-icons/fa';
+import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io';
 import ReactTooltip from 'react-tooltip';
 import {Container, Row, Col} from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function DetailNewsCard(props) {
+  const [expand, setExpand] = useState(false);
+  const toggleExpand = () => {
+    setExpand(!expand);
+  }
+  
   return (
     <Card className='news-card detail'>
       <Card.Title className='news-header detail'>
@@ -37,7 +43,7 @@ function DetailNewsCard(props) {
                 <ReactTooltip place='top' effect='solid' id='twitter-tip'>
                   Twitter
                 </ReactTooltip>
-                <EmailShareButton subject='#CSCI_571_NewsApp' url={props.data.url} body={props.data.url}>
+                <EmailShareButton subject='#CSCI_571_NewsApp' url={props.data.url}>
                   <EmailIcon round size='25' data-tip data-for='email-tip'/>
                 </EmailShareButton>
                 <ReactTooltip place='top' effect='solid' id='email-tip'>
@@ -61,6 +67,8 @@ function DetailNewsCard(props) {
         <Card.Text className='news-descp detail'>
           {props.data.descp}
         </Card.Text>
+        <IoIosArrowDown className='descp-arrow' onClick={toggleExpand}/>
+        <IoIosArrowUp className='descp-arrow' onClick={toggleExpand}/>
       </Card.Body>
     </Card>
   );
