@@ -26,7 +26,6 @@ function NewsCard(props) {
       history.push(`/guardian/article/${encodeURIComponent(props.article.id)}`);
   };
   
-  // TODO: add border around images
   return (
     <Card className='news-card home'>
       <Container fluid className='news-card-container home' onClick={handleClick}>
