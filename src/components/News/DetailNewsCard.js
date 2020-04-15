@@ -17,7 +17,13 @@ import PropTypes from "prop-types";
 function DetailNewsCard(props) {
   const [expand, setExpand] = useState(false);
   const toggleExpand = () => {
-    setExpand(!expand);
+    if (expand) {
+      window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+      setTimeout(() => setExpand(!expand), 1000);
+    } else {
+      window.scrollBy({top: 3000, left: 0, behavior: 'smooth'})
+      setExpand(!expand);
+    }
   }
   // determine if the description is long enough to expand/collapse
   const longDescp = () => props.data.descp.length > 1000
