@@ -14,33 +14,27 @@
   font-size: 1rem;
   margin-left: 1rem;
 }
-
 .news-share.detail {
   float: right;
 }
-
 .news-bookmark.detail {
   color: #d70a2f;
   float: right;
   margin-right: 1rem;
 }
-
 .news-descp.detail {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
-
 .descp-arrow {
   float: right;
   font-size: 1.5rem;
 }
-
 .descp-arrow:hover {
   cursor: pointer;
 }
-
 .loader {
   margin: 20% auto;
 }
