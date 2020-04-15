@@ -22,12 +22,14 @@
   float: right;
   margin-right: 1rem;
 }
-.news-descp.detail {
+
+.news-descp.detail.collapse {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
+
 .descp-arrow {
   float: right;
   font-size: 1.5rem;

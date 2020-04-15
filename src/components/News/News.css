@@ -5,13 +5,11 @@
 .news-card-container.home:hover {
   cursor: pointer;
 }
-
 .news-image.home {
   margin: .5rem 0;
   padding: .15rem;
   border: 1px solid #f0f0f0;
 }
-
 .news-body.home {
   margin-bottom: 1rem;
 }

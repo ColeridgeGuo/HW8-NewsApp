@@ -64,11 +64,22 @@ function DetailNewsCard(props) {
       </Card.Title>
       <Card.Img src={props.data.image} className='news-image detail'/>
       <Card.Body className='news-body detail'>
-        <Card.Text className='news-descp detail'>
-          {props.data.descp}
-        </Card.Text>
-        <IoIosArrowDown className='descp-arrow' onClick={toggleExpand}/>
-        <IoIosArrowUp className='descp-arrow' onClick={toggleExpand}/>
+        {expand &&
+        <>
+          <Card.Text className='news-descp detail expand'>
+            {props.data.descp}
+          </Card.Text>
+          <IoIosArrowUp className='descp-arrow' onClick={toggleExpand}/>
+        </>
+        }
+        {!expand &&
+        <>
+          <Card.Text className='news-descp detail collapse'>
+            {props.data.descp}
+          </Card.Text>
+          <IoIosArrowDown className='descp-arrow' onClick={toggleExpand}/>
+        </>
+        }
       </Card.Body>
     </Card>
   );

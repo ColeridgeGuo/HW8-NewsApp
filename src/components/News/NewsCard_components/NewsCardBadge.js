@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import Badge from "react-bootstrap/Badge";
 import PropTypes from "prop-types";
 
-class NewsCardBadge extends Component {
+class NewsCardBadge extends React.Component {
   constructor(props) {
     super(props);
     this.badge_bgColor_mapping = {
