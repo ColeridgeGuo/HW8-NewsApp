@@ -35,9 +35,13 @@ class DetailNews extends React.Component {
       createBoxUrl(boxId, pageLocation) {
         pageLocation.search = '';
         pageLocation.hash = boxId;
-        return pageLocation.href;
+        return decodeURIComponent(pageLocation.href);
       }
     });
+  }
+  
+  componentWillUnmount() {
+    this.removeCommentBox();
   }
   
   render() {
@@ -54,8 +58,7 @@ class DetailNews extends React.Component {
         {!this.state.loading &&
         <DetailNewsCard data={this.state.article}/>
         }
-        {/* TODO: fix commentbox.io */}
-        <div className='commentbox' id={`commentbox-${this.state.articleId}`}/>
+        <div className='commentbox' id={this.state.articleId}/>
       </>
     )
   }
