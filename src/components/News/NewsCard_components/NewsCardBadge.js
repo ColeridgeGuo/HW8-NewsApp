@@ -2,37 +2,45 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 import PropTypes from "prop-types";
 
+const badge_bgColor = {
+  'world': 'rgb(103,44,255)',
+  'politics': 'rgb(53,131,117)',
+  'business': 'rgb(57,129,230)',
+  'technology': 'rgb(196,216,44)',
+  'sports': 'rgb(242,183,53)',
+  'any_other': 'rgb(91,98,104)',
+  'guardian_fav': 'rgb(16,28,58)',
+  'nytimes_fav': 'rgb(213,213,213)'
+}
+const badge_txtColor = {
+  'world': 'white',
+  'politics': 'white',
+  'business': 'white',
+  'technology': 'black',
+  'sports': 'black',
+  'any_other': 'white',
+  'guardian_fav': 'white',
+  'nytimes_fav': 'black'
+}
+const sections = ['world', 'politics', 'business', 'technology', 'sports'];
+
 class NewsCardBadge extends React.Component {
   constructor(props) {
     super(props);
-    this.badge_bgColor_mapping = {
-      'world': 'rgb(103,44,255)',
-      'politics': 'rgb(53,131,117)',
-      'business': 'rgb(57,129,230)',
-      'technology': 'rgb(196,216,44)',
-      'sports': 'rgb(242,183,53)',
-      'any_other': 'rgb(91,98,104)',
-      'guardian_fav': 'rgb(16,28,58)',
-      'nytimes_fav': 'rgb(213,213,213)'
-    };
-    this.badge_txtColor_mapping = {
-      'world': 'white',
-      'politics': 'white',
-      'business': 'white',
-      'technology': 'black',
-      'sports': 'black',
-      'any_other': 'white',
-      'guardian_fav': 'white',
-      'nytimes_fav': 'black'
-    };
+    this.state = {colorSec: this.map_section_2_color(props.section)}
+  }
+  
+  map_section_2_color = sectionId => {
+    if (sections.includes(sectionId)) return sectionId;
+    else return 'any_other';
   }
   
   render() {
     return (
       <Badge as='span'
              style={{
-               backgroundColor: this.badge_bgColor_mapping[this.props.section],
-               color: this.badge_txtColor_mapping[this.props.section],
+               backgroundColor: badge_bgColor[this.state.colorSec],
+               color: badge_txtColor[this.state.colorSec],
                float: 'right'
              }}
              className='news-section-badge'>

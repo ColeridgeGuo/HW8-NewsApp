@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 import {NavLink} from 'react-router-dom';
-import Select from 'react-select';
+import SearchSelect from "./Header_components/SearchSelect";
 import ToggleSwitch from './Header_components/ToggleSwitch';
 import {FaRegBookmark} from 'react-icons/fa';
 import ReactTooltip from 'react-tooltip';
@@ -15,9 +15,7 @@ class Header extends Component {
   render() {
     return (
       <Navbar variant="dark" id="navbar" expand='lg'>
-        <Select
-          className="autosuggest"
-          placeholder="Enter Keyword .."/>
+        <SearchSelect/>
         <Navbar.Toggle/>
         <Navbar.Collapse>
           <Nav className="mr-auto">
