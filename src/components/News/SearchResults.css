@@ -1,25 +1,24 @@
 .results-header {
   margin-left: 1rem;
 }
-
 .news-card.search {
   margin: 1rem;
 }
-
 .news-card.search {
   cursor: pointer;
 }
-
 .news-col.search {
   padding-left: 0;
   padding-right: 0;
 }
-
 .news-image.search {
   margin-bottom: 1rem;
+  padding: .2rem;
+  border: 1px solid #f0f0f0;
 }
-
 .news-title.search {
   font-weight: bold;
   font-style: italic;
+  font-size: 12pt;
+  line-height: 1.5rem;
 }

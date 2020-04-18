@@ -27,7 +27,7 @@ function SmallNewsCard(props) {
     <Card className='news-card search'>
       <Card.Body className='news-body search' onClick={handleClick}>
         <Card.Title className='news-title search'>
-          {props.article.title}
+          {props.article.title + " "}
           <IoMdShare onClick={handleModalShow}/>
         </Card.Title>
         <Card.Img src={props.article.image} className='news-image search'/>
