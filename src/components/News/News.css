@@ -10,6 +10,12 @@
   padding: .15rem;
   border: 1px solid #f0f0f0;
 }
+
+.news-title.home {
+  /* TODO: make news title bold */
+  font-style: italic;
+}
+
 .news-body.home {
   margin-bottom: 1rem;
 }

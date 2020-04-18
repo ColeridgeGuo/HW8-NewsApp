@@ -1,10 +1,13 @@
 import React from "react";
 import AsyncSelect from 'react-select/async';
 import debounce from 'debounce-promise';
+import {useHistory} from 'react-router-dom';
 
-class SearchSelect extends React.Component {
+function SearchSelect() {
   
-  loadOptions = inputValue => {
+  let history = useHistory();
+  
+  const loadOptions = inputValue => {
     const url = `https://api.cognitive.microsoft.com/bing/v7.0/suggestions?q=${inputValue}`;
     const headers = {
       headers: {
@@ -14,32 +17,30 @@ class SearchSelect extends React.Component {
     return fetch(url, headers)
       .then(res => res.json())
       .then(data => {
-        return this.processOptions(data);
+        return processOptions(data);
       })
       .catch(error => console.log(error));
   }
   
-  processOptions = data => {
+  const processOptions = data => {
     return data.suggestionGroups[0].searchSuggestions.map(
       option => ({value: option.displayText, label: option.displayText})
     )
   }
   
-  handleSelect = selectedValue => {
-    console.log(selectedValue)
+  const handleSelect = selectedValue => {
+    history.push(`/search/${selectedValue.value}`)
   }
   
-  render() {
-    return (
-      <AsyncSelect
-        name='autosuggest'
-        className="autosuggest"
-        placeholder="Enter Keyword .."
-        loadOptions={debounce(this.loadOptions, 500)}
-        onChange={this.handleSelect}
-      />
-    )
-  }
+  return (
+    <AsyncSelect
+      name='autosuggest'
+      className="autosuggest"
+      placeholder="Enter Keyword .."
+      loadOptions={debounce(loadOptions, 500)}
+      onChange={handleSelect}
+    />
+  )
 }
 
 export default SearchSelect;

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./components/Header/Header";
 import News from "./components/News/News";
 import DetailNews from "./components/News/DetailNews";
+import SearchResults from "./components/News/SearchResults";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,6 +49,7 @@ class App extends React.Component {
         </Route>
   
         <Route exact path='/:src/article/:articleId' component={DetailNews}/>
+        <Route exact path='/search/:query' component={SearchResults}/>
       </Router>
     );
   }
