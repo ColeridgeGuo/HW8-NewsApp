@@ -30,11 +30,15 @@ class Header extends Component {
           <ReactTooltip place='bottom' effect='solid' id='bookmark-tip-header'>
             Bookmark
           </ReactTooltip><br/>
-          <Navbar.Text className="source-text">NYTimes</Navbar.Text><br/>
-          <ToggleSwitch
-            toggle={this.props.toggle}
-            handleToggle={this.props.handleToggle}/><br/>
-          <Navbar.Text className="source-text">Guardian</Navbar.Text>
+          {this.props.showToggle &&
+          <>
+            <Navbar.Text className="source-text">NYTimes</Navbar.Text><br/>
+            <ToggleSwitch
+              toggle={this.props.toggle}
+              handleToggle={this.props.handleToggle}/><br/>
+            <Navbar.Text className="source-text">Guardian</Navbar.Text>
+          </>
+          }
         </Navbar.Collapse>
       </Navbar>
     );

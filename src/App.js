@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: localStorage.getItem("toggle") === "true"
+      toggle: localStorage.getItem("toggle") === "true",
+      showToggle: true
     };
   }
   
@@ -20,7 +21,11 @@ class App extends React.Component {
     this.setState({"toggle": !this.state.toggle});
     localStorage.setItem("toggle", this.state.toggle); // remember toggle
     // toggling behavior is handled in News.js: componentDidUpdate
-  };
+  }
+  
+  hideToggle = () => {
+    this.setState({showToggle: !this.state.showToggle})
+  }
   
   // TODO: use param url to reduce the # of Routes
   render() {
@@ -28,7 +33,9 @@ class App extends React.Component {
       <Router>
         <Header
           toggle={this.state.toggle}
-          handleToggle={this.handleToggle}/>
+          handleToggle={this.handleToggle}
+          showToggle={this.state.showToggle}
+        />
         <Route exact path='/'>
           <News toggle={this.state.toggle} section=''/>
         </Route>
@@ -47,10 +54,11 @@ class App extends React.Component {
         <Route exact path='/sports'>
           <News toggle={this.state.toggle} section='sports'/>
         </Route>
-  
+        
         <Route exact path='/:src/article/:articleId' component={DetailNews}/>
-        <Route exact path='/search/:query' render={
-          routeProps => (<SearchResults {...routeProps}/>)}/>
+        <Route exact path='/search/:query' render={routeProps => (
+          <SearchResults {...routeProps} hideToggle={this.hideToggle}/>)}
+        />
       </Router>
     );
   }

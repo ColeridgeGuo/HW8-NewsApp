@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {BounceLoader} from "react-spinners";
+import PropTypes from 'prop-types';
 
 import './SearchResults.css';
 import {css} from "@emotion/core";
@@ -32,6 +33,7 @@ class SearchResults extends React.Component {
   componentDidMount() {
     const {params: {query}} = this.props.match;
     this.searchArticles(query);
+    this.props.hideToggle();
   }
   
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -40,6 +42,10 @@ class SearchResults extends React.Component {
       this.searchArticles(query)
       this.setState({loading: true})
     }
+  }
+  
+  componentWillUnmount() {
+    this.props.hideToggle();
   }
   
   displayEachCard = (article, i) => (
@@ -69,6 +75,12 @@ class SearchResults extends React.Component {
       </>
     );
   }
+}
+
+SearchResults.propTypes = {
+  history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object
 }
 
 export default SearchResults;
