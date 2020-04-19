@@ -49,7 +49,8 @@ class App extends React.Component {
         </Route>
   
         <Route exact path='/:src/article/:articleId' component={DetailNews}/>
-        <Route exact path='/search/:query' component={SearchResults}/>
+        <Route exact path='/search/:query' render={
+          routeProps => (<SearchResults {...routeProps}/>)}/>
       </Router>
     );
   }
