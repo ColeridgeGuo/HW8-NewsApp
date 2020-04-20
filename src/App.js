@@ -4,9 +4,11 @@ import News from "./components/News/News";
 import DetailNews from "./components/News/DetailNews";
 import SearchResults from "./components/News/SearchResults";
 import Bookmarks from "./components/News/Bookmarks";
+import {ToastContainer, toast, Zoom} from 'react-toastify';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,13 +57,20 @@ class App extends React.Component {
         <Route exact path='/sports'>
           <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='sports'/>
         </Route>
-        
+  
         <Route exact path='/:src/article/:articleId' component={DetailNews}/>
         <Route exact path='/search/:query' render={routeProps => (
           <SearchResults {...routeProps} handleHideToggle={this.handleHideToggle}/>)}
         />
         <Route exact path='/bookmarks' render={() => (
           <Bookmarks handleHideToggle={this.handleHideToggle}/>)}
+        />
+        <ToastContainer hideProgressBar={true}
+                        toastClassName='bookmark-toast'
+                        transition={Zoom}
+                        position={toast.POSITION.TOP_CENTER}
+                        autoClose={2000}
+                        draggable={false}
         />
       </Router>
     );

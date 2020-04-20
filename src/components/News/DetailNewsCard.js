@@ -8,13 +8,35 @@ import {
   TwitterIcon,
   TwitterShareButton
 } from "react-share";
-import {FaRegBookmark} from 'react-icons/fa';
+import {FaRegBookmark, FaBookmark} from 'react-icons/fa';
 import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io';
 import ReactTooltip from 'react-tooltip';
+import {toast} from 'react-toastify';
 import {Container, Row, Col} from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function DetailNewsCard(props) {
+  let savedArticles = [];
+  if (localStorage.getItem('favorites') !== null) {
+    savedArticles = JSON.parse(localStorage.getItem('favorites'));
+  }
+  const isArticleSaved = (arr, val) => arr.some(article => val.id === article.id);
+  // state for saved articles (bookmarks)
+  const [saved, setSaved] = useState(isArticleSaved(savedArticles, props.data));
+  const addBookmark = () => {
+    savedArticles.push(props.data);
+    localStorage.setItem('favorites', JSON.stringify(savedArticles));
+    toast(`Saving ${props.data.title}`);
+    setSaved(true);
+  }
+  const removeBookmark = () => {
+    const newSaved = savedArticles.filter(article => article.id !== props.data.id);
+    localStorage.setItem('favorites', JSON.stringify(newSaved));
+    toast(`Removing - ${props.data.title}`)
+    setSaved(false);
+  }
+  
+  // state for expanding the description
   const [expand, setExpand] = useState(false);
   const toggleExpand = () => {
     if (expand) {
@@ -61,10 +83,18 @@ function DetailNewsCard(props) {
             </Col>
             <Col xs={2} sm={2} md={1} lg={1}>
               <span className='news-bookmark detail'>
-                <FaRegBookmark data-tip data-for='bookmark-tip-detail'/>
-                <ReactTooltip place='top' effect='solid' id='bookmark-tip-detail'>
-                  Bookmark
-                </ReactTooltip>
+                {!saved &&
+                <><FaRegBookmark data-tip data-for='bookmark-tip-detail' onClick={addBookmark}/>
+                  <ReactTooltip place='top' effect='solid' id='bookmark-tip-detail'>
+                    Bookmark
+                  </ReactTooltip></>
+                }
+                {saved &&
+                <><FaBookmark data-tip data-for='bookmark-tip-detail' onClick={removeBookmark}/>
+                  <ReactTooltip place='top' effect='solid' id='bookmark-tip-detail'>
+                    Bookmark
+                  </ReactTooltip></>
+                }
               </span>
             </Col>
           </Row>

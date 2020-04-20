@@ -3,6 +3,7 @@
 }
 .bookmark-icon {
   color: white;
+  cursor: pointer;
 }
 .nav-link {
   font-size: 11pt;
