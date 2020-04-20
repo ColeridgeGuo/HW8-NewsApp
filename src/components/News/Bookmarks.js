@@ -14,7 +14,7 @@ class Bookmarks extends React.Component {
   componentDidMount() {
     // localStorage.setItem('favorites', JSON.stringify(favorites));
     this.setState({favorites: JSON.parse(localStorage.getItem('favorites'))});
-    this.props.handleHideToggle();
+    this.props.handleHideToggle(true);
   }
   
   displayEachCard = (article, i) => (

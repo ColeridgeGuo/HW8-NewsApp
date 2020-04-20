@@ -39,7 +39,7 @@ class News extends React.Component {
   
   componentDidMount() {
     this.retrieve_articles();
-    this.props.handleShowToggle();
+    this.props.handleHideToggle(false);
   }
   
   componentDidUpdate(prevProps) {
@@ -70,7 +70,7 @@ class News extends React.Component {
 News.propTypes = {
   toggle: PropTypes.bool.isRequired,
   section: PropTypes.string.isRequired,
-  handleShowToggle: PropTypes.func.isRequired
+  handleHideToggle: PropTypes.func.isRequired
 }
 
 export default News;

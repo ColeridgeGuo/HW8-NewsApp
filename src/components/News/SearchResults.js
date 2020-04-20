@@ -32,7 +32,7 @@ class SearchResults extends React.Component {
   componentDidMount() {
     const {params: {query}} = this.props.match;
     this.searchArticles(query);
-    this.props.handleHideToggle();
+    this.props.handleHideToggle(true);
   }
   
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -78,7 +78,8 @@ class SearchResults extends React.Component {
 SearchResults.propTypes = {
   history: PropTypes.object,
   location: PropTypes.object,
-  match: PropTypes.object
+  match: PropTypes.object.isRequired,
+  handleHideToggle: PropTypes.func.isRequired
 }
 
 export default SearchResults;
