@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import './SearchResults.css';
 import {css} from "@emotion/core";
 
-// TODO: hide toggle switch when searching
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
@@ -67,9 +66,12 @@ class SearchResults extends React.Component {
         }
         {!this.state.loading &&
         <Container fluid className='search-container'>
-          <Row className='news-row search'>{this.state.results.slice(0, 4).map(this.displayEachCard)}</Row>
-          <Row className='news-row search'>{this.state.results.slice(4, 8).map(this.displayEachCard)}</Row>
-          <Row className='news-row search'>{this.state.results.slice(8, 10).map(this.displayEachCard)}</Row>
+          { // four cards per row
+            [0, 4, 8].map(startIndex =>
+              <Row className='news-row bookmarks' key={startIndex}>
+                {this.state.results.slice(startIndex, startIndex + 4).map(this.displayEachCard)}
+              </Row>)
+          }
         </Container>
         }
       </>
