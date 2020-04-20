@@ -32,7 +32,7 @@ class SearchResults extends React.Component {
   componentDidMount() {
     const {params: {query}} = this.props.match;
     this.searchArticles(query);
-    this.props.hideToggle();
+    this.props.handleHideToggle();
   }
   
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -41,10 +41,6 @@ class SearchResults extends React.Component {
       this.searchArticles(query)
       this.setState({loading: true})
     }
-  }
-  
-  componentWillUnmount() {
-    this.props.hideToggle();
   }
   
   displayEachCard = (article, i) => (
