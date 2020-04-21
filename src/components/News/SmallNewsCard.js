@@ -26,19 +26,22 @@ function SmallNewsCard(props) {
     else if (props.article.src === 'guardian')
       history.push(`/guardian/article/${encodeURIComponent(props.article.id)}`);
   };
-  
+  // TODO: add trash can icon and implement functionality
   return (
     <Card className='news-card search'>
       <Card.Body className='news-body search' onClick={handleClick}>
         <Card.Title className='news-title search'>
           {props.article.title + " "}
           <IoMdShare onClick={handleModalShow}/>
-          {location.pathname === "/bookmarks" && <IoMdTrash/>}
+          {location.pathname === '/bookmarks' && <IoMdTrash/>}
         </Card.Title>
         <Card.Img src={props.article.image} className='news-image search'/>
         <Card.Text as='span' className='news-date'>
           {props.article.date}
         </Card.Text>
+        {location.pathname === '/bookmarks' &&
+        <NewsCardBadge section={props.article.src}/>
+        }
         <NewsCardBadge section={props.article.sectionId}/>
       </Card.Body>
       <ShareModal show={modalShow}

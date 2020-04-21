@@ -18,23 +18,14 @@ class News extends React.Component {
   
   // call backend to retrieve news articles
   retrieve_articles = () => {
-    if (this.props.toggle) {
-      Axios.get(`/guardian/${this.props.section}`)
-        .then(res => {
-          this.setState({
-            articles: res.data.articles,
-            loading: false
-          });
+    const source = this.props.toggle ? 'guardian' : 'nytimes';
+    Axios.get(`/${source}/${this.props.section}`)
+      .then(res => {
+        this.setState({
+          articles: res.data.articles,
+          loading: false
         });
-    } else {
-      Axios.get(`/nytimes/${this.props.section}`)
-        .then(res => {
-          this.setState({
-            articles: res.data.articles,
-            loading: false
-          });
-        })
-    }
+      });
   }
   
   componentDidMount() {
@@ -42,7 +33,7 @@ class News extends React.Component {
     this.props.handleHideToggle(false);
   }
   
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.toggle !== prevProps.toggle) {
       this.retrieve_articles();
       this.setState({loading: true})

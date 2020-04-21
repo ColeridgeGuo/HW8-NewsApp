@@ -39,8 +39,7 @@ class App extends React.Component {
       this.setState({favorites: savedArticles})
     }
   }
-  
-  // TODO: use param url to reduce the # of Routes
+
   render() {
     return (
       <Router>
@@ -50,22 +49,34 @@ class App extends React.Component {
           hideToggle={this.state.hideToggle}
         />
         <Route exact path='/'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section=''/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section=''/>
         </Route>
         <Route exact path='/world'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='world'/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section='world'/>
         </Route>
         <Route exact path='/politics'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='politics'/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section='politics'/>
         </Route>
         <Route exact path='/business'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='business'/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section='business'/>
         </Route>
         <Route exact path='/technology'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='technology'/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section='technology'/>
         </Route>
         <Route exact path='/sports'>
-          <News toggle={this.state.toggle} handleHideToggle={this.handleHideToggle} section='sports'/>
+          <News toggle={this.state.toggle}
+                handleHideToggle={this.handleHideToggle}
+                section='sports'/>
         </Route>
   
         <Route exact path='/:src/article/:articleId' component={DetailNews}/>

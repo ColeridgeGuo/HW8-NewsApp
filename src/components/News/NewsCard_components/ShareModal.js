@@ -12,13 +12,20 @@ import PropTypes from 'prop-types';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {useLocation} from 'react-router-dom';
+
+import './ShareModal.css';
 
 function ShareModal(props) {
+  const location = useLocation();
   return (
     <Modal show={props.show} onHide={props.handleClose} size='md'>
       <Modal.Header closeButton>
         <Modal.Title>
-          {props.data.title}
+          {location.pathname === '/bookmarks' &&
+          <div className="modal-title-src">{props.data.src.toUpperCase()}</div>
+          }
+          <div className="modal-title-title">{props.data.title}</div>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='share-modal-body'>
