@@ -49,10 +49,12 @@ class DetailNews extends React.Component {
       <>
         {this.state.loading &&
         <div className="loader">
-          <BounceLoader size={30}
+          <BounceLoader size={40}
                         color={'#2b43c4'}
                         loading={this.state.loading}
-                        css={css`margin: auto`}/>
+                        css={css`margin: auto`}
+          />
+          <p className='loading-message'>Loading</p>
         </div>
         }
         {!this.state.loading &&

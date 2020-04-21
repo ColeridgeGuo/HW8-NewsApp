@@ -7,11 +7,12 @@
 }
 .news-title.detail {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 .news-date.detail {
-  font-size: 1rem;
+  font-weight: normal;
+  font-size: 1.2rem;
   margin-left: 1rem;
 }
 .news-share.detail {
@@ -36,9 +37,17 @@
 .descp-arrow:hover {
   cursor: pointer;
 }
+
 .loader {
-  margin: 20% auto;
+  margin: 40vh auto;
 }
+
+.loading-message {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .Toastify__toast--default.bookmark-toast {
   background: #ffffff;
   color: #000000;

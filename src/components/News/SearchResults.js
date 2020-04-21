@@ -57,7 +57,12 @@ class SearchResults extends React.Component {
         </h4>
         {this.state.loading &&
         <div className="loader">
-          <BounceLoader size={30} color={'#2b43c4'} loading={this.state.loading} css={css`margin: auto`}/>
+          <BounceLoader size={40}
+                        color={'#2b43c4'}
+                        loading={this.state.loading}
+                        css={css`margin: auto`}
+          />
+          <p className='loading-message'>Loading</p>
         </div>
         }
         {!this.state.loading &&

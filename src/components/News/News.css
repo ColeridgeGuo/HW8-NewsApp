@@ -13,7 +13,7 @@
 .news-title.home {
   font-weight: bold;
   font-style: italic;
-  font-size: 14pt;
+  font-size: 1.2rem;
 }
 .news-body.home {
   margin-bottom: 1rem;
@@ -24,7 +24,13 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
 .news-date {
   font-style: italic;
   float: left;
+}
+
+.news-section-badge {
+  float: right;
+  margin: .1rem;
 }

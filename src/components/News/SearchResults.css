@@ -1,8 +1,9 @@
 .results-header {
   margin-left: 1rem;
+  font-size: 1.8rem;
 }
 .news-card.search {
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 .news-card.search {
   cursor: pointer;
@@ -19,8 +20,8 @@
 .news-title.search {
   font-weight: bold;
   font-style: italic;
-  font-size: 12pt;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
 }
 .no-bookmark-warning {
   margin-top: 1rem;
