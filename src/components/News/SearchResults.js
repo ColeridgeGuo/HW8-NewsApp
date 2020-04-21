@@ -44,7 +44,7 @@ class SearchResults extends React.Component {
   }
   
   displayEachCard = (article, i) => (
-    <Col lg={3} className='news-col search' key={i}>
+    <Col lg={3} className="news-col search" key={i}>
       <SmallNewsCard key={article.id} article={article}/>
     </Col>
   )
@@ -52,19 +52,19 @@ class SearchResults extends React.Component {
   render() {
     return (
       <>
-        <h4 className='results-header'>
+        <h4 className="results-header">
           Results
         </h4>
         {this.state.loading &&
-        <div className='loader'>
+        <div className="loader">
           <BounceLoader size={30} color={'#2b43c4'} loading={this.state.loading} css={css`margin: auto`}/>
         </div>
         }
         {!this.state.loading &&
-        <Container fluid className='search-container'>
+        <Container fluid className="search-container">
           { // four cards per row
             [0, 4, 8].map(startIndex =>
-              <Row className='news-row bookmarks' key={startIndex}>
+              <Row className="news-row bookmarks" key={startIndex}>
                 {this.state.results.slice(startIndex, startIndex + 4).map(this.displayEachCard)}
               </Row>)
           }

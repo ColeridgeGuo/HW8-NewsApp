@@ -19,7 +19,7 @@ import './ShareModal.css';
 function ShareModal(props) {
   const location = useLocation();
   return (
-    <Modal show={props.show} onHide={props.handleClose} size='md'>
+    <Modal show={props.show} onHide={props.handleClose} size="md">
       <Modal.Header closeButton>
         <Modal.Title>
           {location.pathname === '/bookmarks' &&
@@ -28,14 +28,14 @@ function ShareModal(props) {
           <div className="modal-title-title">{props.data.title}</div>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className='share-modal-body'>
+      <Modal.Body className="share-modal-body">
         Share via
         <Container>
           <Row>
             <Col>
               <FacebookShareButton
                 url={props.data.url}
-                hashtag='#CSCI_571_NewsApp'>
+                hashtag="#CSCI_571_NewsApp">
                 <FacebookIcon round/>
               </FacebookShareButton>
             </Col>
@@ -48,7 +48,7 @@ function ShareModal(props) {
             </Col>
             <Col>
               <EmailShareButton
-                subject='#CSCI_571_NewsApp'
+                subject="#CSCI_571_NewsApp"
                 url={props.data.url}>
                 <EmailIcon round/>
               </EmailShareButton>

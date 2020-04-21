@@ -48,7 +48,7 @@ class DetailNews extends React.Component {
     return (
       <>
         {this.state.loading &&
-        <div className='loader'>
+        <div className="loader">
           <BounceLoader size={30}
                         color={'#2b43c4'}
                         loading={this.state.loading}
@@ -58,7 +58,7 @@ class DetailNews extends React.Component {
         {!this.state.loading &&
         <DetailNewsCard data={this.state.article}/>
         }
-        <div className='commentbox' id={this.state.articleId}/>
+        <div className="commentbox" id={this.state.articleId}/>
       </>
     )
   }

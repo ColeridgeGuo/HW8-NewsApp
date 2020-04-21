@@ -19,7 +19,7 @@ function Header(props) {
   }
   
   return (
-    <Navbar variant="dark" id="navbar" expand='lg'>
+    <Navbar variant="dark" id="navbar" expand="lg">
       <SearchSelect/>
       <Navbar.Toggle/>
       <Navbar.Collapse>
@@ -34,19 +34,19 @@ function Header(props) {
         {location.pathname !== '/bookmarks' &&
         <>
           <FaRegBookmark className="bookmark-icon"
-                         data-tip data-for='bookmark-tip-header'
+                         data-tip data-for="bookmark-tip-header"
                          onClick={_ => openBookmarks(true)}/>
-          <ReactTooltip place='bottom' effect='solid' id='bookmark-tip-header'>
+          <ReactTooltip place="bottom" effect="solid" id="bookmark-tip-header">
             Bookmark
           </ReactTooltip><br/>
         </>
         }
         {location.pathname === '/bookmarks' &&
         <>
-          <FaBookmark className='bookmark-icon'
-                      data-tip data-for='bookmark-tip-header'
+          <FaBookmark className="bookmark-icon"
+                      data-tip data-for="bookmark-tip-header"
                       onClick={_ => openBookmarks(false)}/>
-          <ReactTooltip place='bottom' effect='solid' id='bookmark-tip-header'>
+          <ReactTooltip place="bottom" effect="solid" id="bookmark-tip-header">
             Bookmark
           </ReactTooltip><br/>
         </>

@@ -37,14 +37,14 @@ class NewsCardBadge extends React.Component {
   
   render() {
     return (
-      <Badge as='span'
+      <Badge as="span"
              style={{
                backgroundColor: badge_bgColor[this.state.colorSec],
                color: badge_txtColor[this.state.colorSec],
                float: 'right',
                margin: '.1rem',
              }}
-             className='news-section-badge'>
+             className="news-section-badge">
         {this.props.section.toUpperCase()}
       </Badge>
     );

@@ -48,46 +48,46 @@ class App extends React.Component {
           handleToggle={this.handleToggle}
           hideToggle={this.state.hideToggle}
         />
-        <Route exact path='/'>
+        <Route exact path="/">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section=''/>
+                section=""/>
         </Route>
-        <Route exact path='/world'>
+        <Route exact path="/world">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section='world'/>
+                section="world"/>
         </Route>
-        <Route exact path='/politics'>
+        <Route exact path="/politics">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section='politics'/>
+                section="politics"/>
         </Route>
-        <Route exact path='/business'>
+        <Route exact path="/business">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section='business'/>
+                section="business"/>
         </Route>
-        <Route exact path='/technology'>
+        <Route exact path="/technology">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section='technology'/>
+                section="technology"/>
         </Route>
-        <Route exact path='/sports'>
+        <Route exact path="/sports">
           <News toggle={this.state.toggle}
                 handleHideToggle={this.handleHideToggle}
-                section='sports'/>
+                section="sports"/>
         </Route>
   
-        <Route exact path='/:src/article/:articleId' component={DetailNews}/>
-        <Route exact path='/search/:query' render={routeProps => (
+        <Route exact path="/:src/article/:articleId" component={DetailNews}/>
+        <Route exact path="/search/:query" render={routeProps => (
           <SearchResults {...routeProps} handleHideToggle={this.handleHideToggle}/>)}
         />
-        <Route exact path='/bookmarks' render={() => (
+        <Route exact path="/bookmarks" render={() => (
           <Bookmarks handleHideToggle={this.handleHideToggle}/>)}
         />
         <ToastContainer hideProgressBar={true}
-                        toastClassName='bookmark-toast'
+                        toastClassName="bookmark-toast"
                         transition={Zoom}
                         position={toast.POSITION.TOP_CENTER}
                         autoClose={2000}

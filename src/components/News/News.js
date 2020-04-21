@@ -44,7 +44,7 @@ class News extends React.Component {
     return (
       <>
         {this.state.loading &&
-        <div className='loader'>
+        <div className="loader">
           <BounceLoader size={30}
                         color={'#2b43c4'}
                         loading={this.state.loading}

@@ -17,7 +17,7 @@ class Bookmarks extends React.Component {
   }
   
   displayEachCard = (article, i) => (
-    <Col lg={3} className='news-col bookmarks' key={i}>
+    <Col lg={3} className="news-col bookmarks" key={i}>
       <SmallNewsCard key={article.id} article={article}/>
     </Col>
   )
@@ -27,14 +27,14 @@ class Bookmarks extends React.Component {
       <>
         {this.state.favorites.length > 0 &&
         <>
-          <h4 className='results-header favorites'>
+          <h4 className="results-header favorites">
             Favorites
           </h4>
-          <Container fluid className='bookmarks-container'>
+          <Container fluid className="bookmarks-container">
             { // four cards per row
               [...Array(this.state.favorites.length).keys()].filter(num => num % 4 === 0)
                 .map(startIndex =>
-                  <Row className='news-row bookmarks' key={startIndex}>
+                  <Row className="news-row bookmarks" key={startIndex}>
                     {this.state.favorites.slice(startIndex, startIndex + 4).map(this.displayEachCard)}
                   </Row>)
             }

@@ -51,47 +51,47 @@ function DetailNewsCard(props) {
   const longDescp = () => props.data.descp.length > 1000
   
   return (
-    <Card className='news-card detail'>
-      <Card.Title className='news-header detail'>
-        <Card.Text className='news-title detail'>{props.data.title}</Card.Text>
-        <Container fluid='xs'>
+    <Card className="news-card detail">
+      <Card.Title className="news-header detail">
+        <Card.Text className="news-title detail">{props.data.title}</Card.Text>
+        <Container fluid="xs">
           <Row noGutters={true}>
             <Col xs={6} sm={8} md={9} lg={10}>
-              <Card.Text as='span' className='news-date detail'>{props.data.date}</Card.Text>
+              <Card.Text as="span" className="news-date detail">{props.data.date}</Card.Text>
             </Col>
             <Col xs={4} sm={2} md={2} lg={1}>
-              <span className='news-share detail'>
-                <FacebookShareButton url={props.data.url} hashtag='#CSCI_571_NewsApp'>
-                  <FacebookIcon round size='25' data-tip data-for='facebook-tip'/>
+              <span className="news-share detail">
+                <FacebookShareButton url={props.data.url} hashtag="#CSCI_571_NewsApp">
+                  <FacebookIcon round size="25" data-tip data-for="facebook-tip"/>
                 </FacebookShareButton>
-                <ReactTooltip place='top' effect='solid' id='facebook-tip'>
+                <ReactTooltip place="top" effect="solid" id="facebook-tip">
                   Facebook
                 </ReactTooltip>
                 <TwitterShareButton url={props.data.url} hashtags={['CSCI_571_NewsApp']}>
-                  <TwitterIcon round size='25' data-tip data-for='twitter-tip'/>
+                  <TwitterIcon round size="25" data-tip data-for="twitter-tip"/>
                 </TwitterShareButton>
-                <ReactTooltip place='top' effect='solid' id='twitter-tip'>
+                <ReactTooltip place="top" effect="solid" id="twitter-tip">
                   Twitter
                 </ReactTooltip>
-                <EmailShareButton subject='#CSCI_571_NewsApp' url={props.data.url}>
-                  <EmailIcon round size='25' data-tip data-for='email-tip'/>
+                <EmailShareButton subject="#CSCI_571_NewsApp" url={props.data.url}>
+                  <EmailIcon round size="25" data-tip data-for="email-tip"/>
                 </EmailShareButton>
-                <ReactTooltip place='top' effect='solid' id='email-tip'>
+                <ReactTooltip place="top" effect="solid" id="email-tip">
                   Email
                 </ReactTooltip>
               </span>
             </Col>
             <Col xs={2} sm={2} md={1} lg={1}>
-              <span className='news-bookmark detail'>
+              <span className="news-bookmark detail">
                 {!saved &&
-                <><FaRegBookmark data-tip data-for='bookmark-tip-detail' onClick={addBookmark}/>
-                  <ReactTooltip place='top' effect='solid' id='bookmark-tip-detail'>
+                <><FaRegBookmark data-tip data-for="bookmark-tip-detail" onClick={addBookmark}/>
+                  <ReactTooltip place="top" effect="solid" id="bookmark-tip-detail">
                     Bookmark
                   </ReactTooltip></>
                 }
                 {saved &&
-                <><FaBookmark data-tip data-for='bookmark-tip-detail' onClick={removeBookmark}/>
-                  <ReactTooltip place='top' effect='solid' id='bookmark-tip-detail'>
+                <><FaBookmark data-tip data-for="bookmark-tip-detail" onClick={removeBookmark}/>
+                  <ReactTooltip place="top" effect="solid" id="bookmark-tip-detail">
                     Bookmark
                   </ReactTooltip></>
                 }
@@ -100,27 +100,27 @@ function DetailNewsCard(props) {
           </Row>
         </Container>
       </Card.Title>
-      <Card.Img src={props.data.image} className='news-image detail'/>
-      <Card.Body className='news-body detail'>
+      <Card.Img src={props.data.image} className="news-image detail"/>
+      <Card.Body className="news-body detail">
         {!longDescp() &&
-        <Card.Text className='news-descp detail'>
+        <Card.Text className="news-descp detail">
           {props.data.descp}
         </Card.Text>
         }
         {expand && longDescp() &&
         <>
-          <Card.Text className='news-descp detail expand'>
+          <Card.Text className="news-descp detail expand">
             {props.data.descp}
           </Card.Text>
-          <IoIosArrowUp className='descp-arrow' onClick={toggleExpand}/>
+          <IoIosArrowUp className="descp-arrow" onClick={toggleExpand}/>
         </>
         }
         {!expand && longDescp() &&
         <>
-          <Card.Text className='news-descp detail collapse'>
+          <Card.Text className="news-descp detail collapse">
             {props.data.descp}
           </Card.Text>
-          <IoIosArrowDown className='descp-arrow' onClick={toggleExpand}/>
+          <IoIosArrowDown className="descp-arrow" onClick={toggleExpand}/>
         </>
         }
       </Card.Body>

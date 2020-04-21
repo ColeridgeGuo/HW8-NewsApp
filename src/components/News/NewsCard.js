@@ -27,22 +27,22 @@ function NewsCard(props) {
   };
   
   return (
-    <Card className='news-card home'>
-      <Container fluid className='news-card-container home' onClick={handleClick}>
+    <Card className="news-card home">
+      <Container fluid className="news-card-container home" onClick={handleClick}>
         <Row>
           <Col lg={3}>
-            <Card.Img src={props.article.image} className='news-image home'/>
+            <Card.Img src={props.article.image} className="news-image home"/>
           </Col>
           <Col lg={9}>
-            <Card.Body className='news-body home'>
-              <Card.Title className='news-title home'>
+            <Card.Body className="news-body home">
+              <Card.Title className="news-title home">
                 {props.article.title}
                 <IoMdShare onClick={handleModalShow}/>
               </Card.Title>
-              <Card.Text className='news-descp home'>
+              <Card.Text className="news-descp home">
                 {props.article.descp}
               </Card.Text>
-              <Card.Text as='span' className='news-date'>
+              <Card.Text as="span" className="news-date">
                 {props.article.date}
               </Card.Text>
               <NewsCardBadge section={props.article.sectionId}/>

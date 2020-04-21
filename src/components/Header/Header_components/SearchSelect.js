@@ -34,12 +34,12 @@ function SearchSelect() {
   
   return (
     <AsyncSelect
-      name='autosuggest'
+      name="autosuggest"
       className="autosuggest"
       placeholder="Enter Keyword .."
       loadOptions={debounce(loadOptions, 1000)}
       onChange={handleSelect}
-      value=''
+      value=""
     />
   )
 }
