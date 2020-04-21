@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SmallNewsCard from "./SmallNewsCard";
 import PropTypes from 'prop-types';
+import {toast} from "react-toastify";
 
 class Bookmarks extends React.Component {
   constructor(props) {
@@ -16,9 +17,22 @@ class Bookmarks extends React.Component {
     this.props.handleHideToggle(true);
   }
   
+  // handle remove bookmark
+  removeBookmark = (event, data) => {
+    event.stopPropagation();
+    const favorites = JSON.parse(localStorage.getItem('favorites'));
+    const newFavorites = favorites.filter(article => article.id !== data.id);
+    localStorage.setItem('favorites', JSON.stringify(newFavorites));
+    this.setState({favorites: newFavorites});
+    toast(`Removing - ${data.title}`)
+  }
+  
   displayEachCard = (article, i) => (
     <Col lg={3} className="news-col bookmarks" key={i}>
-      <SmallNewsCard key={article.id} article={article}/>
+      <SmallNewsCard key={article.id}
+                     article={article}
+                     removeBookmark={this.removeBookmark}
+      />
     </Col>
   )
   

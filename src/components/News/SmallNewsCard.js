@@ -5,7 +5,6 @@ import {IoMdShare, IoMdTrash} from 'react-icons/io';
 import ShareModal from "./NewsCard_components/ShareModal";
 import PropTypes from "prop-types";
 import {useHistory, useLocation} from "react-router-dom";
-import {toast} from "react-toastify";
 
 function SmallNewsCard(props) {
   let location = useLocation();
@@ -26,14 +25,16 @@ function SmallNewsCard(props) {
     else if (props.article.src === 'guardian')
       history.push(`/guardian/article/${encodeURIComponent(props.article.id)}`);
   };
-  // TODO: add trash can icon and implement functionality
+  
   return (
     <Card className="news-card search">
       <Card.Body className="news-body search" onClick={handleClick}>
         <Card.Title className="news-title search">
           {props.article.title + " "}
           <IoMdShare onClick={handleModalShow}/>
-          {location.pathname === '/bookmarks' && <IoMdTrash/>}
+          {location.pathname === '/bookmarks' &&
+          <IoMdTrash onClick={event => props.removeBookmark(event, props.article)}/>
+          }
         </Card.Title>
         <Card.Img src={props.article.image} className="news-image search"/>
         <Card.Text as="span" className="news-date">
@@ -52,7 +53,8 @@ function SmallNewsCard(props) {
 }
 
 SmallNewsCard.propTypes = {
-  article: PropTypes.object.isRequired
+  article: PropTypes.object.isRequired,
+  removeBookmark: PropTypes.func,
 }
 
 export default SmallNewsCard;

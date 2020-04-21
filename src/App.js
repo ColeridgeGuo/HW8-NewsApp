@@ -16,7 +16,6 @@ class App extends React.Component {
     this.state = {
       toggle: localStorage.getItem("toggle") === "true",
       hideToggle: false,
-      favorites: []
     };
   }
   
@@ -34,9 +33,7 @@ class App extends React.Component {
     // set up bookmarks in localStorage
     let savedArticles = JSON.parse(localStorage.getItem('favorites'));
     if (savedArticles === null) {
-      localStorage.setItem('favorites', JSON.stringify(this.state.favorites))
-    } else {
-      this.setState({favorites: savedArticles})
+      localStorage.setItem('favorites', JSON.stringify([]))
     }
   }
 

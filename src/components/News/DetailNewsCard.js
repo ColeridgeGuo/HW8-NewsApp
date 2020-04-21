@@ -16,10 +16,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function DetailNewsCard(props) {
-  let savedArticles = [];
-  if (localStorage.getItem('favorites') !== null) {
-    savedArticles = JSON.parse(localStorage.getItem('favorites'));
-  }
+  let savedArticles = JSON.parse(localStorage.getItem('favorites'));
   const isArticleSaved = (arr, val) => arr.some(article => val.id === article.id);
   // state for saved articles (bookmarks)
   const [saved, setSaved] = useState(isArticleSaved(savedArticles, props.data));
@@ -43,7 +40,7 @@ function DetailNewsCard(props) {
       window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
       setTimeout(() => setExpand(!expand), 1000);
     } else {
-      window.scrollBy({top: 3000, left: 0, behavior: 'smooth'})
+      window.scrollTo({top: 10000, left: 0, behavior: 'smooth'})
       setExpand(!expand);
     }
   }
