@@ -36,11 +36,9 @@
 .descp-arrow:hover {
   cursor: pointer;
 }
-
 .loader {
   margin: 20% auto;
 }
-
 .Toastify__toast--default.bookmark-toast {
   background: #ffffff;
   color: #000000;

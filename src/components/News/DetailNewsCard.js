@@ -49,7 +49,10 @@ function DetailNewsCard(props) {
   }
   // determine if the description is long enough to expand/collapse
   const longDescp = () => props.data.descp.length > 1000
-  
+  // TODO: add trash can icon and implement functionality
+  // TODO: add source badge
+  // TODO: add source to share modal
+  // TODO: display message for empty bookmark
   return (
     <Card className='news-card detail'>
       <Card.Title className='news-header detail'>

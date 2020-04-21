@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import Card from "react-bootstrap/Card";
 import NewsCardBadge from "./NewsCard_components/NewsCardBadge";
-import {IoMdShare} from 'react-icons/io';
+import {IoMdShare, IoMdTrash} from 'react-icons/io';
 import ShareModal from "./NewsCard_components/ShareModal";
 import PropTypes from "prop-types";
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
+import {toast} from "react-toastify";
 
 function SmallNewsCard(props) {
+  let location = useLocation();
+  
   // handle showing sharing modals
   const [modalShow, setModalShow] = useState(false);
   const handleModalClose = () => setModalShow(false);
@@ -15,6 +18,7 @@ function SmallNewsCard(props) {
     event.stopPropagation();
   }
   
+  // handle card onClick
   let history = useHistory();
   const handleClick = () => {
     if (props.article.src === 'nytimes')
@@ -29,6 +33,7 @@ function SmallNewsCard(props) {
         <Card.Title className='news-title search'>
           {props.article.title + " "}
           <IoMdShare onClick={handleModalShow}/>
+          {location.pathname === "/bookmarks" && <IoMdTrash/>}
         </Card.Title>
         <Card.Img src={props.article.image} className='news-image search'/>
         <Card.Text as='span' className='news-date'>

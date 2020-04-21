@@ -25,18 +25,26 @@ class Bookmarks extends React.Component {
   render() {
     return (
       <>
-        <h4 className='results-header favorites'>
-          Favorites
-        </h4>
-        <Container fluid className='bookmarks-container'>
-          { // four cards per row
-            [...Array(this.state.favorites.length).keys()].filter(num => num % 4 === 0)
-              .map(startIndex =>
-                <Row className='news-row bookmarks' key={startIndex}>
-                  {this.state.favorites.slice(startIndex, startIndex + 4).map(this.displayEachCard)}
-                </Row>)
-          }
-        </Container>
+        {this.state.favorites.length > 0 &&
+        <>
+          <h4 className='results-header favorites'>
+            Favorites
+          </h4>
+          <Container fluid className='bookmarks-container'>
+            { // four cards per row
+              [...Array(this.state.favorites.length).keys()].filter(num => num % 4 === 0)
+                .map(startIndex =>
+                  <Row className='news-row bookmarks' key={startIndex}>
+                    {this.state.favorites.slice(startIndex, startIndex + 4).map(this.displayEachCard)}
+                  </Row>)
+            }
+          </Container>
+        </>
+        }
+        {
+          this.state.favorites.length === 0 &&
+          <h4 className="no-bookmark-warning">You have no saved articles</h4>
+        }
       </>
     );
   }

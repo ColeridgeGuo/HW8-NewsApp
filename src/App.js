@@ -15,7 +15,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       toggle: localStorage.getItem("toggle") === "true",
-      hideToggle: false
+      hideToggle: false,
+      favorites: []
     };
   }
   
@@ -25,9 +26,18 @@ class App extends React.Component {
     localStorage.setItem('toggle', this.state.toggle); // remember toggle
     // toggling behavior is handled in News.js: componentDidUpdate
   }
-  
   handleHideToggle = toHide => {
     this.setState({hideToggle: toHide})
+  }
+  
+  componentDidMount() {
+    // set up bookmarks in localStorage
+    let savedArticles = JSON.parse(localStorage.getItem('favorites'));
+    if (savedArticles === null) {
+      localStorage.setItem('favorites', JSON.stringify(this.state.favorites))
+    } else {
+      this.setState({favorites: savedArticles})
+    }
   }
   
   // TODO: use param url to reduce the # of Routes

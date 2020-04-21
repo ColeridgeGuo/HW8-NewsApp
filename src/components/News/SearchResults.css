@@ -22,3 +22,8 @@
   font-size: 12pt;
   line-height: 1.5rem;
 }
+
+.no-bookmark-warning {
+  margin-top: 1rem;
+  text-align: center;
+}
