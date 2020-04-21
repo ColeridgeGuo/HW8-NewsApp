@@ -3,9 +3,9 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import NewsCardBadge from './NewsCard_components/NewsCardBadge';
+import NewsCardBadge from '../CardComponents/NewsCardBadge';
 import {IoMdShare} from 'react-icons/io';
-import ShareModal from "./NewsCard_components/ShareModal";
+import ShareModal from "../CardComponents/ShareModal";
 import PropTypes from "prop-types";
 import {useHistory} from "react-router-dom";
 

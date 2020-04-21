@@ -2,8 +2,8 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 import {NavLink, useHistory, useLocation} from 'react-router-dom';
-import SearchSelect from "./Header_components/SearchSelect";
-import ToggleSwitch from './Header_components/ToggleSwitch';
+import SearchSelect from "./HeaderComponents/SearchSelect";
+import ToggleSwitch from './HeaderComponents/ToggleSwitch';
 import {FaRegBookmark, FaBookmark} from 'react-icons/fa';
 import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';

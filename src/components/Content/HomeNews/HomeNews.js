@@ -5,9 +5,9 @@ import {css} from "@emotion/core";
 import BounceLoader from 'react-spinners/BounceLoader';
 import PropTypes from 'prop-types';
 
-import './News.css';
+import './HomeNews.css';
 
-class News extends React.Component {
+class HomeNews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,10 +60,10 @@ class News extends React.Component {
   }
 }
 
-News.propTypes = {
+HomeNews.propTypes = {
   toggle: PropTypes.bool.isRequired,
   section: PropTypes.string.isRequired,
   handleHideToggle: PropTypes.func.isRequired
 }
 
-export default News;
+export default HomeNews;

@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import Card from "react-bootstrap/Card";
-import NewsCardBadge from "./NewsCard_components/NewsCardBadge";
+import NewsCardBadge from "../CardComponents/NewsCardBadge";
 import {IoMdShare, IoMdTrash} from 'react-icons/io';
-import ShareModal from "./NewsCard_components/ShareModal";
+import ShareModal from "../CardComponents/ShareModal";
 import PropTypes from "prop-types";
 import {useHistory, useLocation} from "react-router-dom";
 

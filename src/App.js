@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from "./components/Header/Header";
-import News from "./components/News/News";
-import DetailNews from "./components/News/DetailNews";
-import SearchResults from "./components/News/SearchResults";
-import Bookmarks from "./components/News/Bookmarks";
+import HomeNews from "./components/Content/HomeNews/HomeNews";
+import DetailNews from "./components/Content/DetailNews/DetailNews";
+import SearchResults from "./components/Content/SearchNews/SearchResults";
+import Bookmarks from "./components/Content/Bookmarks/Bookmarks";
 import {ToastContainer, toast, Zoom} from 'react-toastify';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
@@ -23,7 +23,7 @@ class App extends React.Component {
   handleToggle = () => {
     this.setState({toggle: !this.state.toggle});
     localStorage.setItem('toggle', this.state.toggle); // remember toggle
-    // toggling behavior is handled in News.js: componentDidUpdate
+    // toggling behavior is handled in HomeNews.js: componentDidUpdate
   }
   handleHideToggle = toHide => {
     this.setState({hideToggle: toHide})
@@ -46,34 +46,34 @@ class App extends React.Component {
           hideToggle={this.state.hideToggle}
         />
         <Route exact path="/">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section=""/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section=""/>
         </Route>
         <Route exact path="/world">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section="world"/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section="world"/>
         </Route>
         <Route exact path="/politics">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section="politics"/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section="politics"/>
         </Route>
         <Route exact path="/business">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section="business"/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section="business"/>
         </Route>
         <Route exact path="/technology">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section="technology"/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section="technology"/>
         </Route>
         <Route exact path="/sports">
-          <News toggle={this.state.toggle}
-                handleHideToggle={this.handleHideToggle}
-                section="sports"/>
+          <HomeNews toggle={this.state.toggle}
+                    handleHideToggle={this.handleHideToggle}
+                    section="sports"/>
         </Route>
   
         <Route exact path="/:src/article/:articleId" component={DetailNews}/>
