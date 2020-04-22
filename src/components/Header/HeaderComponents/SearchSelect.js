@@ -37,7 +37,7 @@ function SearchSelect() {
       name="autosuggest"
       className="autosuggest"
       placeholder="Enter Keyword .."
-      loadOptions={debounce(loadOptions, 1000)}
+      loadOptions={debounce(loadOptions, 500)}
       onChange={handleSelect}
       value=""
     />

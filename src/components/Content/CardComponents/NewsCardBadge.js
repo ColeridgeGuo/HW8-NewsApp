@@ -3,26 +3,26 @@ import Badge from "react-bootstrap/Badge";
 import PropTypes from "prop-types";
 
 const badge_bgColor = {
-  'world': 'rgb(103,44,255)',
-  'politics': 'rgb(53,131,117)',
-  'business': 'rgb(57,129,230)',
-  'technology': 'rgb(196,216,44)',
-  'sports': 'rgb(242,183,53)',
-  'any_other': 'rgb(91,98,104)',
-  'guardian_fav': 'rgb(16,28,58)',
-  'nytimes_fav': 'rgb(213,213,213)'
+  world: 'rgb(103,44,255)',
+  politics: 'rgb(53,131,117)',
+  business: 'rgb(57,129,230)',
+  technology: 'rgb(196,216,44)',
+  sports: 'rgb(242,183,53)',
+  any_other: 'rgb(111,117,123)',
+  guardian: 'rgb(24,40,72)',
+  nytimes: 'rgb(221,221,221)'
 }
 const badge_txtColor = {
-  'world': 'white',
-  'politics': 'white',
-  'business': 'white',
-  'technology': 'black',
-  'sports': 'black',
-  'any_other': 'white',
-  'guardian_fav': 'white',
-  'nytimes_fav': 'black'
+  world: 'white',
+  politics: 'white',
+  business: 'white',
+  technology: 'black',
+  sports: 'black',
+  any_other: 'white',
+  guardian: 'white',
+  nytimes: 'black'
 }
-const sections = ['world', 'politics', 'business', 'technology', 'sports'];
+const sections = ['world', 'politics', 'business', 'technology', 'sports', 'guardian', 'nytimes'];
 
 class NewsCardBadge extends React.Component {
   constructor(props) {
