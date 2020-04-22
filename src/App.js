@@ -76,7 +76,8 @@ class App extends React.Component {
                     section="sports"/>
         </Route>
   
-        <Route exact path="/:src/article/:articleId" component={DetailNews}/>
+        <Route exact path="/:src/article/:articleId" render={routeProps => (
+          <DetailNews {...routeProps} handleHideToggle={this.handleHideToggle}/>)}/>
         <Route exact path="/search/:query" render={routeProps => (
           <SearchResults {...routeProps} handleHideToggle={this.handleHideToggle}/>)}
         />

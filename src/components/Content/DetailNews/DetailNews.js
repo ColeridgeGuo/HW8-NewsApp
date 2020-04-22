@@ -38,6 +38,7 @@ class DetailNews extends React.Component {
         return decodeURIComponent(pageLocation.href);
       }
     });
+    this.props.handleHideToggle(true);
   }
   
   componentWillUnmount() {
@@ -69,7 +70,8 @@ class DetailNews extends React.Component {
 DetailNews.propTypes = {
   history: PropTypes.object,
   location: PropTypes.object,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  handleHideToggle: PropTypes.func.isRequired,
 }
 
 export default DetailNews;
