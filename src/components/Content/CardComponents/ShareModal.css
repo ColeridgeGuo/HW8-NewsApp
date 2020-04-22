@@ -3,13 +3,16 @@
   font-weight: bold;
   font-size: 1.6rem;
 }
-
 .modal-title-title {
   font-family: Arial, Serif, serif;
   font-size: 1.3rem;
   line-height: 1.8rem;
 }
-
 .share-modal-body {
   text-align: center;
+}
+
+.share-via {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
 }

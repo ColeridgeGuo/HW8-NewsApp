@@ -29,7 +29,7 @@ function ShareModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="share-modal-body">
-        Share via
+        <p className="share-via">Share via</p>
         <Container>
           <Row>
             <Col>
