@@ -20,7 +20,7 @@ class SearchResults extends React.Component {
   }
   
   searchArticles = query => {
-    Axios.get(`/search/${query}`)
+    Axios.get(`https://csci571hw8-yingxuan-backend.wl.r.appspot.com/search/${query}`)
       .then(res => {
         this.setState({
           results: res.data,

@@ -20,7 +20,7 @@ class DetailNews extends React.Component {
   }
   
   retrieve_article = () => {
-    Axios.get(`/${this.state.src}/article/${this.state.articleId}`)
+    Axios.get(`https://csci571hw8-yingxuan-backend.wl.r.appspot.com/${this.state.src}/article/${this.state.articleId}`)
       .then(res => {
         this.setState({
           article: res.data,

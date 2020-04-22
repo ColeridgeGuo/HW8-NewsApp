@@ -19,7 +19,7 @@ class HomeNews extends React.Component {
   // call backend to retrieve news articles
   retrieve_articles = () => {
     const source = this.props.toggle ? 'guardian' : 'nytimes';
-    Axios.get(`/${source}/${this.props.section}`)
+    Axios.get(`https://csci571hw8-yingxuan-backend.wl.r.appspot.com/${source}/${this.props.section}`)
       .then(res => {
         this.setState({
           articles: res.data.articles,
