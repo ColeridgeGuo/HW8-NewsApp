@@ -53,7 +53,9 @@ class SearchResults extends React.Component {
     return (
       <>
         <h4 className="results-header">
-          Results
+          Results for "{
+          this.props.match.params.query
+        }"
         </h4>
         {this.state.loading &&
         <div className="loader">
